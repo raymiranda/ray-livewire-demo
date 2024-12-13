@@ -32,34 +32,34 @@
 
             <div class="w-full flex flex-col">
                 @if($users->isNotEmpty())
-                <!-- <div class="flex flex-col py-2 w-full justify-end">
-                
-                </div> -->
+                <div class="flex flex-col py-2 w-full justify-end">
+                    {{ $users->links() }}
+                </div>
                 
                 <table class="table w-full">
-                    <thead>
-                        <th class="border">Name</th>
-                        <th class="border">Email</th>
-                        <th class="border">Registration Date</th>
-                        <th class="border">Actions</th>
+                    <thead class="bg-slate-300">
+                        <th class="border py-2">Name</th>
+                        <th class="border py-2">Email</th>
+                        <th class="border py-2">Registration Date</th>
+                        <th class="border py-2">Actions</th>
                     </thead>
                     <tbody>
                         @foreach($users as $user)
-                        <tr class="">
+                        <tr class="@if($loop->even) bg-slate-200 @endif">
                             <td class="border text-center">{{ $user->name }}</td>
                             <td class="border text-center">{{ $user->email}}</td>
                             <td class="border text-center">{{ \Carbon\Carbon::parse($user->created_at)->format('m/d/Y H:m') }}</td>
 
                             <td class="border text-center flex justify-center gap-2">
-                                <button wire:click="viewUser({{$user->id}})" class="bg-green-500 text-white border-green-200 hover:bg-green-800 px-2 py-2 rounded-md">View User</button>
+                                <button class="bg-green-500 text-white border-green-200 hover:bg-green-800 px-2 py-2 rounded-md">View User</button>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                <!-- <div class="flex flex-col py-2 w-full justify-end">
-                
-                </div> -->
+                <div class="flex flex-col py-2 w-full justify-end">
+                {{ $users->links() }}
+                </div>
                 @else
                 <p>No users found</p>
                 @endif

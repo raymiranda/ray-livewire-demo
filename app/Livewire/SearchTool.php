@@ -25,7 +25,7 @@ class SearchTool extends Component
     public function render()
     {
         return view('livewire.search-tool', [
-            'users' => User::search($this->search)->get(),
+            'users' => User::search($this->search)->paginate(10),
         ]);
     }
 }

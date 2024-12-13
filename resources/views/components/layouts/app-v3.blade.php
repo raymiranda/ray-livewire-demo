@@ -917,10 +917,10 @@
                 </div>
                 <!-- Navigation Links -->
                 <div class="hidden md:flex space-x-4 items-center">
-                    <a href="{{ route('counter-tool') }}" class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">Counter</a>
-                    <a href="{{ route('todo-tasks') }}" class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">Todo Tasks</a>
-                    <a href="{{ route('todo-tasks-v2') }}" class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">Todo Tasks V2</a>
-                    <a href="{{ route('search-tool') }}" class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm" wire:navigate wire:current="font-bold text-zinc-800 underline">Search Tool</a>
+                    <a href="{{ route('counter-tool') }}" class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium" wire:current="font-bold text-zinc-800 underline">Counter</a>
+                    <a href="{{ route('todo-tasks') }}" class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium" wire:current="font-bold text-zinc-800 underline">Todo Tasks</a>
+                    <a href="{{ route('todo-tasks-v2') }}" class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium" wire:navigate wire:current="font-bold text-zinc-800 underline">Todo Tasks V2</a>
+                    <a href="{{ route('search-tool') }}" class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm" wire:current="font-bold text-zinc-800 underline">Search Tool</a>
                 </div>
                 <!-- Mobile Menu Button -->
                 <div class="flex items-center md:hidden">
