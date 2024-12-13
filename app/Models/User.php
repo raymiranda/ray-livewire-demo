@@ -47,12 +47,12 @@ class User extends Authenticatable
     }
 
     /**
-     * @param mixed $query 
-     * @param mixed $term 
-     * @return mixed 
+     * @param  mixed  $query
+     * @param  mixed  $term
      */
-    public function scopeSearch($query, $term) : mixed {
-        return $query->where('name', 'like', '%' . $term . '%')
-            ->orWhere('email', 'like', '%' . $term . '%');
+    public function scopeSearch($query, $term): mixed
+    {
+        return $query->where('name', 'like', '%'.$term.'%')
+            ->orWhere('email', 'like', '%'.$term.'%');
     }
 }

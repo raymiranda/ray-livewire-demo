@@ -10,14 +10,16 @@ use Livewire\WithPagination;
 class SearchTool extends Component
 {
     use WithPagination;
-    
+
     public string $search = '';
 
     public bool $showSuccessMessage = false;
-    public bool $showErrorMessage = false;
-    public string $successMessage = '';
-    public string $errorMessage = '';
 
+    public bool $showErrorMessage = false;
+
+    public string $successMessage = '';
+
+    public string $errorMessage = '';
 
     #[Layout('components.layouts.app-v3')]
     public function render()

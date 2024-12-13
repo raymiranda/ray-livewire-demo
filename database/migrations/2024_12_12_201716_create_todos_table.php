@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('task_datetime'); 
+            $table->dateTime('task_datetime');
             $table->string('name');
             $table->text('description')->nullable();
             $table->tinyInteger('is_done')->default(0);

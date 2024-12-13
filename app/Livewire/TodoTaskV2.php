@@ -3,19 +3,26 @@
 namespace App\Livewire;
 
 use App\Models\Todo;
-use Livewire\Component;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
+use Livewire\Component;
 
 class TodoTaskV2 extends Component
 {
     public string $name;
+
     public string $description = '';
+
     public string $task_date;
+
     public string $task_time;
+
     public bool $showSuccessMessage = false;
+
     public bool $showErrorMessage = false;
+
     public string $successMessage = '';
+
     public string $errorMessage = '';
 
     public function addTask()
@@ -36,7 +43,7 @@ class TodoTaskV2 extends Component
             'task_time.date_format' => 'Task time format is invalid. Use H:i.',
         ]);
 
-        $task_datetime = $this->task_date . ' ' . $this->task_time;
+        $task_datetime = $this->task_date.' '.$this->task_time;
 
         try {
             Todo::create([

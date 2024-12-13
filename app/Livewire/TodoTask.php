@@ -3,20 +3,23 @@
 namespace App\Livewire;
 
 use App\Models\Todo;
-use Livewire\Component;
 use Illuminate\Support\Facades\Log;
+use Livewire\Component;
 
 class TodoTask extends Component
 {
     public string $name;
+
     public string $description = '';
+
     public string $task_date;
+
     public string $task_time;
 
     public function addTask()
     {
         $this->resetErrorBag();
-        
+
         $this->validate([
             'name' => 'required|max:255',
             'description' => 'string|nullable',
@@ -31,7 +34,7 @@ class TodoTask extends Component
             'task_time.date_format' => 'Task time format is invalid. Use H:i.',
         ]);
 
-        $task_datetime = $this->task_date . ' ' . $this->task_time;
+        $task_datetime = $this->task_date.' '.$this->task_time;
 
         try {
             Todo::create([
@@ -44,7 +47,7 @@ class TodoTask extends Component
 
             $this->showMessage('success', 'Task added successfully.');
 
-            # Note if the reset is done after this, the success message will not be displayed
+            // Note if the reset is done after this, the success message will not be displayed
 
         } catch (\Exception $e) {
             $this->showMessage('error', 'An error occurred while adding the task. Please try again.');

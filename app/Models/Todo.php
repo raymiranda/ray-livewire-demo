@@ -15,6 +15,4 @@ class Todo extends Model
         'name',
         'description',
     ];
-
-    
 }

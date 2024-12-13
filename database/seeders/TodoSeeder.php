@@ -16,8 +16,8 @@ class TodoSeeder extends Seeder
         for ($i = 1; $i <= 5; $i++) {
             Todo::create([
                 'task_datetime' => Carbon::now()->addDays($i),
-                'name' => 'Task ' . $i,
-                'description' => 'Description for task ' . $i,
+                'name' => 'Task '.$i,
+                'description' => 'Description for task '.$i,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
